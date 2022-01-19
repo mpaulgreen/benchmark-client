@@ -83,6 +83,7 @@ public class BenchmarkRunner {
                         executorOfType().execute();
                         execution.stop();
                     } catch (Exception e) {
+                        e.printStackTrace();
                         logger.error("Failed to run: {}", e.getMessage());
                         execution.failed();
                     }
@@ -97,10 +98,9 @@ public class BenchmarkRunner {
 
 
         private Supplier<Fruit> newFruit = () -> {
-            Random random = new Random();
             String uuid = UUID.randomUUID().toString();
             Fruit fruit = new Fruit();
-            fruit.setId(String.valueOf(random.nextInt(Integer.MAX_VALUE)));
+            fruit.setId(uuid);
             fruit.setName(uuid);
             fruit.setDescription(uuid);
             return fruit;
