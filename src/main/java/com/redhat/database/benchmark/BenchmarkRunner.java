@@ -100,7 +100,7 @@ public class BenchmarkRunner {
         private Supplier<Fruit> newFruit = () -> {
             String uuid = UUID.randomUUID().toString();
             Fruit fruit = new Fruit();
-            fruit.setId(uuid);
+            fruit.setIdentifier(uuid);
             fruit.setName(uuid);
             fruit.setDescription(uuid);
             return fruit;

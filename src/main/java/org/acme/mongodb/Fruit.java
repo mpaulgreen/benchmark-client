@@ -6,7 +6,7 @@ public class Fruit {
 
     private String name;
     private String description;
-    private String id;
+    private String identifier;
 
     public Fruit() {
     }
@@ -32,26 +32,12 @@ public class Fruit {
         this.description = description;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof Fruit)) {
-            return false;
-        }
 
-        Fruit other = (Fruit) obj;
-        return Objects.equals(other.name, this.name);
+    public void setIdentifier(String id) {
+        this.identifier = id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.name);
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
+    public String getIdentifier() {
+        return identifier;
     }
 }
