@@ -3,8 +3,8 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "cfb40dc64871eb21958dd7e2d4bad70c23015838",
-      "app.quarkus.io/build-timestamp" : "2022-01-19 - 21:16:31 +0000"
+      "app.quarkus.io/commit-id" : "503e224794c5862aedc119d8f8a888361b079364",
+      "app.quarkus.io/build-timestamp" : "2022-01-19 - 23:53:15 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "benchmark-client",
@@ -29,12 +29,12 @@
   "kind" : "Deployment",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "cfb40dc64871eb21958dd7e2d4bad70c23015838",
-      "app.quarkus.io/build-timestamp" : "2022-01-19 - 21:16:31 +0000"
+      "app.quarkus.io/commit-id" : "503e224794c5862aedc119d8f8a888361b079364",
+      "app.quarkus.io/build-timestamp" : "2022-01-19 - 23:53:15 +0000"
     },
     "labels" : {
-      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
-      "app.kubernetes.io/name" : "benchmark-client"
+      "app.kubernetes.io/name" : "benchmark-client",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
     },
     "name" : "benchmark-client"
   },
@@ -42,19 +42,19 @@
     "replicas" : 1,
     "selector" : {
       "matchLabels" : {
-        "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
-        "app.kubernetes.io/name" : "benchmark-client"
+        "app.kubernetes.io/name" : "benchmark-client",
+        "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
       }
     },
     "template" : {
       "metadata" : {
         "annotations" : {
-          "app.quarkus.io/commit-id" : "cfb40dc64871eb21958dd7e2d4bad70c23015838",
-          "app.quarkus.io/build-timestamp" : "2022-01-19 - 21:16:31 +0000"
+          "app.quarkus.io/commit-id" : "503e224794c5862aedc119d8f8a888361b079364",
+          "app.quarkus.io/build-timestamp" : "2022-01-19 - 23:53:15 +0000"
         },
         "labels" : {
-          "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
-          "app.kubernetes.io/name" : "benchmark-client"
+          "app.kubernetes.io/name" : "benchmark-client",
+          "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
         }
       },
       "spec" : {

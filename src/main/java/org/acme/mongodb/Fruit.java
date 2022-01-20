@@ -1,12 +1,14 @@
 package org.acme.mongodb;
 
+import org.bson.types.ObjectId;
+
 import java.util.Objects;
 
 public class Fruit {
 
     private String name;
     private String description;
-    private String id;
+    private ObjectId id;
 
     public Fruit() {
     }
@@ -47,11 +49,11 @@ public class Fruit {
         return Objects.hash(this.name);
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 }

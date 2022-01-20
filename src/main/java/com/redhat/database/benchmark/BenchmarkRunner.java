@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.acme.mongodb.Fruit;
+import org.bson.types.ObjectId;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.slf4j.Logger;
@@ -100,7 +101,7 @@ public class BenchmarkRunner {
         private Supplier<Fruit> newFruit = () -> {
             String uuid = UUID.randomUUID().toString();
             Fruit fruit = new Fruit();
-            fruit.setId(uuid);
+            fruit.setId(ObjectId.get());
             fruit.setName(uuid);
             fruit.setDescription(uuid);
             return fruit;
