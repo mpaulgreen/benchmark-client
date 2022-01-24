@@ -3,8 +3,8 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    app.quarkus.io/commit-id: fea7d630aeccec5ac77760855c0e270387664a33
-    app.quarkus.io/build-timestamp: 2022-01-24 - 22:00:27 +0000
+    app.quarkus.io/commit-id: da019fa160c25cfa066f5281b68190f503f23aba
+    app.quarkus.io/build-timestamp: 2022-01-24 - 22:44:23 +0000
   labels:
     app.kubernetes.io/name: benchmark-client
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -23,8 +23,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    app.quarkus.io/commit-id: fea7d630aeccec5ac77760855c0e270387664a33
-    app.quarkus.io/build-timestamp: 2022-01-24 - 22:00:27 +0000
+    app.quarkus.io/commit-id: da019fa160c25cfa066f5281b68190f503f23aba
+    app.quarkus.io/build-timestamp: 2022-01-24 - 22:44:23 +0000
   labels:
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
     app.kubernetes.io/name: benchmark-client
@@ -38,8 +38,8 @@ spec:
   template:
     metadata:
       annotations:
-        app.quarkus.io/commit-id: fea7d630aeccec5ac77760855c0e270387664a33
-        app.quarkus.io/build-timestamp: 2022-01-24 - 22:00:27 +0000
+        app.quarkus.io/commit-id: da019fa160c25cfa066f5281b68190f503f23aba
+        app.quarkus.io/build-timestamp: 2022-01-24 - 22:44:23 +0000
       labels:
         app.kubernetes.io/version: 1.0.0-SNAPSHOT
         app.kubernetes.io/name: benchmark-client
