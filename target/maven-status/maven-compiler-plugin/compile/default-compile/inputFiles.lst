@@ -3,5 +3,7 @@
 /Users/mrigankapaul/Documents/knowledgebase/benchmark-client/src/main/java/com/redhat/database/benchmark/BenchmarkResource.java
 /Users/mrigankapaul/Documents/knowledgebase/benchmark-client/src/main/java/com/redhat/database/benchmark/BenchmarkRunner.java
 /Users/mrigankapaul/Documents/knowledgebase/benchmark-client/src/main/java/com/redhat/database/benchmark/Execution.java
+/Users/mrigankapaul/Documents/knowledgebase/benchmark-client/src/main/java/org/acme/mongodb/FruitService.java
+/Users/mrigankapaul/Documents/knowledgebase/benchmark-client/src/main/java/org/acme/mongodb/FruitResource.java
 /Users/mrigankapaul/Documents/knowledgebase/benchmark-client/src/main/java/org/acme/mongodb/Fruit.java
 /Users/mrigankapaul/Documents/knowledgebase/benchmark-client/src/main/java/com/redhat/database/benchmark/TestMetrics.java

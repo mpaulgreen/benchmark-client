@@ -1,11 +1,13 @@
-com/redhat/database/benchmark/BenchmarkRunner$Worker.class
 com/redhat/database/benchmark/TestMetrics$ResponseTimeAndID.class
 com/redhat/database/benchmark/BenchmarkResource.class
 com/redhat/database/benchmark/BenchmarkRunner$RestExecutor.class
-com/redhat/database/benchmark/Execution.class
-com/redhat/database/benchmark/BenchmarkRunner.class
 com/redhat/database/benchmark/BenchmarkRunner$Worker$1.class
 com/redhat/database/benchmark/Stats.class
+org/acme/mongodb/FruitResource.class
+com/redhat/database/benchmark/BenchmarkRunner$Worker.class
+org/acme/mongodb/FruitService.class
+com/redhat/database/benchmark/Execution.class
+com/redhat/database/benchmark/BenchmarkRunner.class
 com/redhat/database/benchmark/BenchmarkService.class
 org/acme/mongodb/Fruit.class
 com/redhat/database/benchmark/TestMetrics.class

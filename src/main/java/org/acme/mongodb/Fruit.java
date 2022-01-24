@@ -1,7 +1,5 @@
 package org.acme.mongodb;
 
-import java.util.Objects;
-
 public class Fruit {
 
     private String name;
@@ -31,7 +29,6 @@ public class Fruit {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     public void setIdentifier(String id) {
         this.identifier = id;
