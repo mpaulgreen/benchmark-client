@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.acme.mongodb.Fruit;
+import org.acme.mongodb.FruitService;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.slf4j.Logger;
@@ -27,9 +28,8 @@ public class BenchmarkRunner {
     @ConfigProperty(name = "process-api/mp-rest/url")
     private String serverUrl;
 
-    @RestClient
     @Inject
-    private BenchmarkService benchmarkService;
+    FruitService fruitService;
 
     public String run(int noOfTests, int noOfThreads) throws JsonProcessingException,
             InterruptedException {
@@ -71,6 +71,7 @@ public class BenchmarkRunner {
 
             TestMetrics metrics = stats.build();
             logger.info("Completed {} tests in {}ms", metrics.getNoOfExecutions(), metrics.getElapsedTimeMillis());
+            System.out.println(metrics);
             return metrics;
         }
 
@@ -107,7 +108,7 @@ public class BenchmarkRunner {
         };
 
         private final RestExecutor fruits = () ->
-                benchmarkService.add(newFruit.get());
+                fruitService.add(newFruit.get());
 
     }
 

@@ -8,6 +8,5 @@ com/redhat/database/benchmark/BenchmarkRunner$Worker.class
 org/acme/mongodb/FruitService.class
 com/redhat/database/benchmark/Execution.class
 com/redhat/database/benchmark/BenchmarkRunner.class
-com/redhat/database/benchmark/BenchmarkService.class
 org/acme/mongodb/Fruit.class
 com/redhat/database/benchmark/TestMetrics.class
