@@ -25,8 +25,6 @@ import java.util.stream.IntStream;
 @ApplicationScoped
 public class BenchmarkRunner {
     private Logger logger = LoggerFactory.getLogger(BenchmarkRunner.class);
-    @ConfigProperty(name = "process-api/mp-rest/url")
-    private String serverUrl;
 
     @Inject
     FruitService fruitService;
@@ -52,7 +50,7 @@ public class BenchmarkRunner {
         }
 
         private TestMetrics run() throws InterruptedException {
-            logger.info("Ready to run from {}: {} seconds in {} threads", serverUrl, durationInSeconds,
+            logger.info("Ready to run {} seconds in {} threads",  durationInSeconds,
                     noOfThreads);
             ExecutorService executor = Executors.newFixedThreadPool(noOfThreads);
             Timer timer = new Timer("timer");

@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: benchmark-client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: benchmark-client
+  template:
+    metadata:
+      labels:
+        app: benchmark-client
+    spec:
+      imagePullSecrets:
+        - name: private-reg-cred
+      containers:
+        - name: benchmark-client
+          image: quay.io/lrangine/mpaul-benchmark-client:2
+          lifecycle:
+            postStart:
+              exec:
+                command: [ "/bin/sh", "-c", "(sleep 10m && rm -rf /tmp/database-processing.done && curl http://localhost:9090/benchmark/120/6 && touch /tmp/database-processing.done ) > /tmp/database-message.log" ]
+          env:
+            - name: URL
+              value: "http://localhost:9090"
+            - name: WORKER_POOL_SIZE
+              value: "10"
+            - name: MIN_POOL
+              value: "10"
+            - name: "MAX_POOL"
+              value: "10"
+            - name: quarkus.mongodb.connection-string
+              valueFrom:
+                secretKeyRef:
+                  name: database-benchmark-mongo
+                  key: connectionString.standard
+          ports:
+            - containerPort: 9090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: benchmark-client
+spec:
+  selector:
+    app: benchmark-client
+  ports:
+    - port: 9090
+      protocol: TCP
+      targetPort: 9090

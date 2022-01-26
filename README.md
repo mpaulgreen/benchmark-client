@@ -2,7 +2,7 @@
 
 You can run your application in dev mode that enables live coding using:
 ```
-mvn compile quarkus:dev
+mvn -DWORKER_POOL_SIZE=10 -DMIN_POOL=10 -DMAX_POOL=10 compile quarkus:dev
 ```
 ## Packaging and running the application
 
