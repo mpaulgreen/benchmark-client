@@ -1,0 +1,68 @@
+#
+# This is a minimal config. To see all the options available, refer to the
+# "extended" directory
+#
+---
+apiVersion: mongodb.com/v1
+kind: MongoDB
+metadata:
+  name: kogito-sharded-mongo
+spec:
+  shardCount: 1
+  mongodsPerShardCount: 3
+  mongosCount: 2
+  configServerCount: 3
+  version: 4.4.0-ent
+  type: ShardedCluster
+
+  # Before you create this object, you'll need to create a project ConfigMap and a
+  # credentials Secret. For instructions on how to do this, please refer to our
+  # documentation, here:
+  # https://docs.opsmanager.mongodb.com/current/tutorial/install-k8s-operator
+  opsManager:
+    configMapRef:
+      name: opsman-configmap
+  credentials: opsman-secret
+
+  # This flag allows the creation of pods without persistent volumes. This is for
+  # testing only, and must not be used in production. 'false' will disable
+  # Persistent Volume Claims. The default is 'true'
+  persistent: true
+  exposedExternally: true
+  configSrvPodSpec:
+    podTemplate:
+      spec:
+        containers:
+          - name: mongodb-enterprise-database
+            resources:
+              limits:
+                cpu: "2"
+                memory: 1100M
+              requests:
+                cpu: "1.8"
+                memory: 1024M
+  shardPodSpec:
+    podTemplate:
+      spec:
+        containers:
+          - name: mongodb-enterprise-database
+            resources:
+              limits:
+                cpu: ".5"
+                memory: 500M
+              requests:
+                cpu: ".5"
+                memory: 500M
+
+  mongosPodSpec:
+    podTemplate:
+      spec:
+        containers:
+          - name: mongodb-enterprise-database
+            resources:
+              limits:
+                cpu: "3.3"
+                memory: 2500M
+              requests:
+                cpu: "3"
+                memory: 2424M
