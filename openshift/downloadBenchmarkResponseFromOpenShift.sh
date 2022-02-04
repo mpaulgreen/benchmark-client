@@ -1,7 +1,6 @@
 #!/bin/sh
 
-echo " Assuming you are on the RedHat VPN and currently authorized with open shift cluster...!!"
-
+echo " Assuming you are currently authorized with open shift cluster...!!"
 
 if [ -d "pod-downloads" ]; then rm -Rf pod-downloads; fi
 
@@ -14,3 +13,8 @@ echo "Downloading the files from open shift cluster. This may take some time dep
 
 echo "Successfully downloaded files from Open Shift cluster"
 
+totalRequestsPerSecond=$(jq .requestsPerSecond * | jq -s 'add')
+totalNoOfExecutions=$(jq .noOfExecutions * | jq -s 'add')
+
+echo "Total Requests Per Second=[$totalRequestsPerSecond]"
+echo "Total Number Of Executions=[$totalNoOfExecutions]"

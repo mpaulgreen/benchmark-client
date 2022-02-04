@@ -6,3 +6,6 @@ target
 *.iml
 .DS_Store
 /.idea
+*.jar
+*.class
+target/classes/*

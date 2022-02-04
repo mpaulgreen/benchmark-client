@@ -20,7 +20,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: [ "/bin/sh", "-c", "(sleep 30 && rm -rf /tmp/database-processing.done && curl http://localhost:9090/benchmark/120/6 && touch /tmp/database-processing.done ) > /tmp/database-message.log" ]
+                command: [ "/bin/sh", "-c", "(sleep 30 && rm -rf /tmp/database-processing.done && curl http://localhost:9090/benchmark/20/3 && touch /tmp/database-processing.done ) > /tmp/database-message.log" ]
           env:
             - name: URL
               value: "http://localhost:9090"
