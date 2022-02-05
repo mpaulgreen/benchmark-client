@@ -8,4 +8,5 @@ target
 /.idea
 *.jar
 *.class
+/target/quarkus-app/*
 target/classes/*

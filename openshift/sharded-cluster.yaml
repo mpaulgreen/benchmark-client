@@ -8,7 +8,7 @@ kind: MongoDB
 metadata:
   name: kogito-sharded-mongo
 spec:
-  shardCount: 1
+  shardCount: 3
   mongodsPerShardCount: 3
   mongosCount: 2
   configServerCount: 3
@@ -21,8 +21,8 @@ spec:
   # https://docs.opsmanager.mongodb.com/current/tutorial/install-k8s-operator
   opsManager:
     configMapRef:
-      name: opsman-configmap
-  credentials: opsman-secret
+      name: mongo-opsmanager-org-config-map
+  credentials: mongo-opsmanager-org-secret
 
   # This flag allows the creation of pods without persistent volumes. This is for
   # testing only, and must not be used in production. 'false' will disable
@@ -36,11 +36,11 @@ spec:
           - name: mongodb-enterprise-database
             resources:
               limits:
-                cpu: "2"
-                memory: 1100M
+                cpu: "1"
+                memory: 1000M
               requests:
-                cpu: "1.8"
-                memory: 1024M
+                cpu: "1"
+                memory: 1000M
   shardPodSpec:
     podTemplate:
       spec:
@@ -48,11 +48,11 @@ spec:
           - name: mongodb-enterprise-database
             resources:
               limits:
-                cpu: ".5"
-                memory: 500M
+                cpu: "1"
+                memory: 1000M
               requests:
-                cpu: ".5"
-                memory: 500M
+                cpu: "1"
+                memory: 1000M
 
   mongosPodSpec:
     podTemplate:
@@ -61,8 +61,8 @@ spec:
           - name: mongodb-enterprise-database
             resources:
               limits:
-                cpu: "3.3"
-                memory: 2500M
+                cpu: "1"
+                memory: 1000M
               requests:
-                cpu: "3"
-                memory: 2424M
+                cpu: "1"
+                memory: 1000M
